@@ -223,4 +223,4 @@ inputSecondaryColor.dispatchEvent(new Event("input"));
 inputAccentColor.dispatchEvent(new Event("input"));
 
 console.log("✅ Semua event listener berhasil dipasang!");
-console.log("🎨 Moodboard Generator siap digunakan!");
+console.log("🎨 Moodboard Generator digunakan!");
