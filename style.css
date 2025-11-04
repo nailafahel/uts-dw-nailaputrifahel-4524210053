@@ -306,6 +306,7 @@ summary:hover {
 
 details[open] summary {
   background-color: #4c51bf;
+  padding: 0;
 }
 
 details ul {
