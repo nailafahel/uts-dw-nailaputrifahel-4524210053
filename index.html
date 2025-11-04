@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generator Moodboard Digital</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Generator Moodboard Digital</h1>
+      <p>Bebaskan imajinasi Anda dan biarkan moodboard berbicara</p>
+    </header>
+
+    <main class="main-container">
+      <!-- Panel Kontrol (Form) -->
+      <section class="control-panel">
+        <form id="moodboard-form">
+          <fieldset>
+            <legend>🎨 Pengaturan Tema Warna</legend>
+
+            <p>
+              <label for="primary-color">Warna Utama:</label><br />
+              <input
+                type="color"
+                id="primary-color"
+                name="primary_color"
+                value="#FF6B9D"
+              />
+              <span id="primary-color-label">#FF6B9D</span>
+            </p>
+
+            <p>
+              <label for="secondary-color">Warna Sekunder:</label><br />
+              <input
+                type="color"
+                id="secondary-color"
+                name="secondary_color"
+                value="#4ECDC4"
+              />
+              <span id="secondary-color-label">#4ECDC4</span>
+            </p>
+
+            <p>
+              <label for="accent-color">Warna Aksen:</label><br />
+              <input
+                type="color"
+                id="accent-color"
+                name="accent_color"
+                value="#FFE66D"
+              />
+              <span id="accent-color-label">#FFE66D</span>
+            </p>
+
+            <p>
+              <label for="color-preset">Atau Pilih Preset Warna:</label><br />
+              <select id="color-preset" name="color_preset">
+                <option value="custom">Custom (Pilih sendiri)</option>
+                <option value="sunset">🌅 Sunset Vibes</option>
+                <option value="ocean">🌊 Ocean Breeze</option>
+                <option value="forest">🌲 Forest Fresh</option>
+                <option value="lavender">💜 Lavender Dream</option>
+                <option value="autumn">🍂 Autumn Warmth</option>
+                <option value="neon">⚡ Neon Nights</option>
+              </select>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>💭 Kata Kunci & Mood</legend>
+
+            <p>
+              <label for="mood-title">Judul Moodboard:</label><br />
+              <input
+                type="text"
+                id="mood-title"
+                name="mood_title"
+                maxlength="40"
+                placeholder="Contoh: Summer Vacation, Minimal Design..."
+              />
+            </p>
+
+            <p>
+              <label for="mood-keyword1">Kata Kunci 1:</label><br />
+              <input
+                type="text"
+                id="mood-keyword1"
+                name="mood_keyword1"
+                maxlength="20"
+                placeholder="Contoh: Creative, Elegant..."
+              />
+            </p>
+
+            <p>
+              <label for="mood-keyword2">Kata Kunci 2:</label><br />
+              <input
+                type="text"
+                id="mood-keyword2"
+                name="mood_keyword2"
+                maxlength="20"
+                placeholder="Contoh: Modern, Bold..."
+              />
+            </p>
+
+            <p>
+              <label for="mood-keyword3">Kata Kunci 3:</label><br />
+              <input
+                type="text"
+                id="mood-keyword3"
+                name="mood_keyword3"
+                maxlength="20"
+                placeholder="Contoh: Minimal, Cozy..."
+              />
+            </p>
+
+            <p>
+              <label for="mood-description">Deskripsi Singkat:</label><br />
+              <textarea
+                id="mood-description"
+                name="mood_description"
+                rows="3"
+                placeholder="Jelaskan mood atau vibe yang ingin Anda tampilkan..."
+              ></textarea>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>🌸 Tema Background Pastel</legend>
+
+            <p>
+              <label for="pastel-theme">Pilih Tema Warna Pastel:</label><br />
+              <select id="pastel-theme" name="pastel_theme">
+                <option value="custom">Custom (Pilih sendiri)</option>
+                <option value="pink">🌸 Pastel Pink (Soft & Sweet)</option>
+                <option value="blue">☁️ Pastel Blue (Calm & Peaceful)</option>
+                <option value="mint">🍃 Pastel Mint (Fresh & Clean)</option>
+                <option value="lavender">💜 Pastel Lavender (Dreamy & Elegant)</option>
+                <option value="peach">🍑 Pastel Peach (Warm & Cozy)</option>
+                <option value="lemon">🍋 Pastel Lemon (Bright & Cheerful)</option>
+              </select>
+            </p>
+          </fieldset>
+
+          <button type="button" id="reset-btn">Reset Moodboard</button>
+        </form>
+      </section>
+
+      <!-- Area Pratinjau -->
+      <article class="preview-area">
+        <h2>Pratinjau Moodboard</h2>
+
+        <div class="moodboard-container">
+          <div class="moodboard-canvas" id="moodboard-preview">
+            <!-- Header Moodboard -->
+            <div class="moodboard-header">
+              <h3 id="preview-title">MY MOODBOARD</h3>
+            </div>
+
+            <!-- Color Palette -->
+            <div class="color-palette">
+              <div class="color-swatch" id="swatch-1">
+                <span class="color-code">#FF6B9D</span>
+              </div>
+              <div class="color-swatch" id="swatch-2">
+                <span class="color-code">#4ECDC4</span>
+              </div>
+              <div class="color-swatch" id="swatch-3">
+                <span class="color-code">#FFE66D</span>
+              </div>
+            </div>
+
+            <!-- Keywords Grid -->
+            <div class="keywords-grid">
+              <div class="keyword-card" id="keyword-card-1">
+                <span id="preview-keyword1">CREATIVE</span>
+              </div>
+              <div class="keyword-card" id="keyword-card-2">
+                <span id="preview-keyword2">MODERN</span>
+              </div>
+              <div class="keyword-card" id="keyword-card-3">
+                <span id="preview-keyword3">BOLD</span>
+              </div>
+            </div>
+
+            <!-- Description Area -->
+            <div class="moodboard-description">
+              <p id="preview-description">
+                Deskripsi mood dan vibe Anda akan muncul di sini. Jelaskan
+                inspirasi dan tema yang ingin Anda sampaikan.
+              </p>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="moodboard-footer">
+              <span class="footer-item">🎨 Digital Moodboard</span>
+              <span class="footer-item" id="preview-date">Nov 2024</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p>Moodboard Generator Digital</p> 
+      <p style="font-size: 0.875rem; opacity: 0.9">
+       Ujian Tengah Semester - Desain Web (A) - 4524210053 - Naila Putri Fahel 
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
